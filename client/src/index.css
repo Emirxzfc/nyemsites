@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+ 
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+ 
+  --primary: 142 76% 36%;
+  --primary-foreground: 355.7 100% 97.3%;
+ 
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+ 
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+ 
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+ 
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 142 76% 36%;
+ 
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 240 10% 4%;
+  --foreground: 0 0% 98%;
+  
+  --primary: 130 100% 50%; /* Neon Green */
+  --primary-foreground: 240 10% 4%;
+  
+  --secondary: 240 6% 10%;
+  --secondary-foreground: 0 0% 98%;
+  
+  --muted: 240 6% 10%;
+  --muted-foreground: 240 5% 65%;
+  
+  --accent: 130 80% 40%;
+  --accent-foreground: 0 0% 98%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  
+  --border: 240 6% 15%;
+  --input: 240 6% 15%;
+  --ring: 130 100% 50%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rajdhani', sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3);
+  }
+  
+  .box-glow {
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.15);
+  }
+  
+  .glass-card {
+    @apply bg-zinc-900/40 backdrop-blur-md border border-white/5;
+  }
+  
+  .neon-border {
+    @apply border border-primary/50 shadow-[0_0_10px_rgba(57,255,20,0.2)];
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #39FF14;
+}
